@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diễn đàn Bàn luận</title>
+    <link rel="website icon" href="https://png.pngtree.com/png-vector/20190614/ourlarge/pngtree-webinarforumonlineseminarwebsite-flat-color-icon-vector-png-image_1480988.jpg">
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
+    <script defer src="diendang.js"></script>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f9fafc;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+      }
+
+      input[type="file"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #388e3c;
+      }
+
+      #postsContainer {
+        margin-top: 20px;
+      }
+
+      .post {
+        background: #f4f4f4;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .post img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Diễn Đàn Bàn Luận</h1>
+      <form id="postForm">
+        <textarea
+          id="postContent"
+          placeholder="Nhập nội dung bài viết..."
+          required
+        ></textarea>
+        <input type="file" id="postImage" accept="image/*" />
+        <button type="submit">Đăng bài</button>
+      </form>
+      <div id="postsContainer"></div>
+    </div>
+  </body>
+</html>
